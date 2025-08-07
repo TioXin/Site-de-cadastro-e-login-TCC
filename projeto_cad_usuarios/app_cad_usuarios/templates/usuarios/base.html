@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <title>Cadastro de Usuários</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configuração básica opcional -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              bebas: ['"Bebas Neue"', "sans-serif"], // Correção aqui
+            },
+            colors: {
+              primary: "#3B82F6",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-red-700 px-4 py-3 shadow-md">
+      <div class="container mx-auto">
+        <a
+          href="{% url 'home' %}"
+          class="flex items-center text-3xl font-bebas text-white hover:text-gray-200 no-underline"
+        >
+          <img
+            src="https://imgs.search.brave.com/R6NHHAM3pXv95eBCvq-v7yFDmpq4ArV-qKrOHBm1XcY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMTcv/MjU5LzA5OS9zbWFs/bC9ob21lLWljb24t/YmxhY2stZnJlZS1w/bmcucG5n"
+            alt="Ícone Home"
+            class="w-6 h-6 mr-2"
+          />
+          <p>Inicio</p>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Bloco de conteúdo principal -->
+    <main class="container mx-auto px-4 py-8">
+      {% block conteudo %}
+      <!-- O conteúdo das páginas filhas será inserido aqui -->
+      {% endblock %}
+    </main>
+  </body>
+</html>
